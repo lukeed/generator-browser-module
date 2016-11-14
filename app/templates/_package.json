@@ -26,7 +26,7 @@
 	],
 	"keywords": [
 		"browser",
-		"browser-module",
+		"browser-module"
 	],
 	"dependencies": {},
 	"devDependencies": {<% if (ava) { %>
