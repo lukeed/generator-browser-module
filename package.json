@@ -1,6 +1,6 @@
 {
   "name": "generator-browser-module",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Scaffold out a browser module with dev tools and an example page.",
   "license": "MIT",
   "repository": "lukeed/generator-browser-module",
