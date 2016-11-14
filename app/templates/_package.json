@@ -13,7 +13,7 @@
 		"node": ">=4"
 	},
 	"scripts": {
-		"setup": "fly setup",
+		"postinstall": "fly setup",
 		"build": "<% if (esnext) { %>BABEL=1 <% } %>fly build",
 		"release": "<% if (esnext) { %>BABEL=1 <% } %>fly release",
 		"start": "<% if (esnext) { %>BABEL=1 <% } %>fly release serve",
