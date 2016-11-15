@@ -15,14 +15,17 @@
   "scripts": {
     "setup": "fly setup",
     "build": "<% if (esnext) { %>BABEL=1 <% } %>fly build",
+    "docs": "<% if (esnext) { %>BABEL=1 <% } %>fly docs",
     "release": "<% if (esnext) { %>BABEL=1 <% } %>fly release",
     "start": "<% if (esnext) { %>BABEL=1 <% } %>fly release serve",
     "watch": "<% if (esnext) { %>BABEL=1 <% } %>fly watch",
     "test": "xo<% if (ava) { %> && ava<% } %>"
   },
   "main": "lib/index.js",
+  "browser": "build/<%= moduleName %>.js",
   "files": [
-    "lib"
+    "lib",
+    "build"
   ],
   "keywords": [
     "browser",
