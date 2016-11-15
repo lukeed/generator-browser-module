@@ -16,6 +16,7 @@ With [yo](https://github.com/yeoman/yo):
 
 ```
 $ yo browser-module
+$ npm run setup
 ```
 
 There are multiple command-line options available:
