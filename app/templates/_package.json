@@ -1,43 +1,54 @@
 {
-	"name": "<%= moduleName %>",
-	"version": "0.0.0",
-	"description": "<%= moduleDescription %>",
-	"license": "MIT",
-	"repository": "<%= githubUsername %>/<%= repoName %>",
-	"author": {
-		"name": "<%= name %>",
-		"email": "<%= email %>",
-		"url": "<%= humanizedWebsite %>"
-	},
-	"engines": {
-		"node": ">=4"
-	},
-	"scripts": {
-		"postinstall": "fly setup",
-		"build": "<% if (esnext) { %>BABEL=1 <% } %>fly build",
-		"release": "<% if (esnext) { %>BABEL=1 <% } %>fly release",
-		"start": "<% if (esnext) { %>BABEL=1 <% } %>fly release serve",
-		"watch": "<% if (esnext) { %>BABEL=1 <% } %>fly watch",
-		"test": "xo<% if (ava) { %> && ava<% } %>"
-	},
-	"main": "lib/index.js",
-	"files": [
-		"lib"
-	],
-	"keywords": [
-		"browser",
-		"browser-module"
-	],
-	"dependencies": {},
-	"devDependencies": {<% if (ava) { %>
-		"ava": "^0.15.2",<% } %>
-		"browser-module-env": "^0.1.0",
-		"xo": "^0.16.0"
-	},
-	"fly": {
-		"pkg": "node_modules/browser-module-env"
-	},
-	"xo": {
-		"envs": ["browser"]
-	}
+  "name": "<%= moduleName %>",
+  "version": "0.0.0",
+  "description": "<%= moduleDescription %>",
+  "license": "MIT",
+  "repository": "<%= githubUsername %>/<%= repoName %>",
+  "author": {
+    "name": "<%= name %>",
+    "email": "<%= email %>",
+    "url": "<%= humanizedWebsite %>"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "postinstall": "fly setup",
+    "build": "<% if (esnext) { %>BABEL=1 <% } %>fly build",
+    "release": "<% if (esnext) { %>BABEL=1 <% } %>fly release",
+    "start": "<% if (esnext) { %>BABEL=1 <% } %>fly release serve",
+    "watch": "<% if (esnext) { %>BABEL=1 <% } %>fly watch",
+    "test": "xo<% if (ava) { %> && ava<% } %>"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "browser",
+    "browser-module"
+  ],
+  "dependencies": {},
+  "devDependencies": {<% if (ava) { %>
+    "ava": "^0.15.2",<% } %>
+    "browser-module-env": "^0.1.0",
+    "xo": "^0.16.0"
+  },
+  "fly": {
+    "pkg": "node_modules/browser-module-env"
+  },
+  "browserify": {
+    "transform": [
+      "rollupify"
+    ]
+  },
+  "xo": {
+    "envs": [
+      "browser"
+    ],
+    "ignores": [
+      "docs/**",
+      "build/**"
+    ]
+  }
 }
